@@ -66,6 +66,9 @@ public:
   Eigen::VectorXd state() { return x_hat; };
   double time() { return t; };
 
+  Eigen::VectorXd predict() { return A * x_hat; };
+  Eigen::VectorXd predict(const Eigen::MatrixXd& A) { return A * x_hat; };
+
 private:
 
   // Matrices for computation
