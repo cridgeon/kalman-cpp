@@ -69,6 +69,9 @@ public:
   Eigen::VectorXd predict() { return A * x_hat; };
   Eigen::VectorXd predict(const Eigen::MatrixXd& A) { return A * x_hat; };
 
+  void set_measurement_noise_covariance(const Eigen::MatrixXd& R) { this->R = R; }
+  void set_process_noise_covariance(const Eigen::MatrixXd& Q) { this->Q = Q; }
+
 private:
 
   // Matrices for computation
